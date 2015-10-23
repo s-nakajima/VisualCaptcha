@@ -1,0 +1,53 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: /Controller/Component/VisualCaptchaComponent.php:221
+msgid "Image was NOT valid! Please try again."
+msgstr "間違った画像を選びました。もう一度やり直してください。"
+
+#: /Controller/Component/VisualCaptchaComponent.php:224
+msgid "Accessibility answer was NOT valid! Please try again."
+msgstr "間違った回答でした。もう一度やり直してください。"
+
+#: /View/Elements/visual_captcha.ctp:57
+#: /View/Helper/VisualCaptchaHelper.php:90
+msgid "Sound icon"
+msgstr "音声"
+
+#: /View/Elements/visual_captcha.ctp:58
+#: /View/Helper/VisualCaptchaHelper.php:91
+msgid "Accessibility option: listen to a question and answer it!"
+msgstr "アクセシビリティ対応：質問を聞いて答えることができます"
+
+#: /View/Elements/visual_captcha.ctp:59
+#: /View/Helper/VisualCaptchaHelper.php:92
+msgid "Type below the <strong>answer</strong> to what you hear. Numbers or words:"
+msgstr "音声を聞いて<strong>答え</strong>を以下に入力してください。答えは数、またはひとつの単語です。"
+
+#: /View/Elements/visual_captcha.ctp:60
+#: /View/Helper/VisualCaptchaHelper.php:93
+msgid "Click or touch the <strong>ANSWER</strong>"
+msgstr "<strong>ANSWER</strong>をクリック、またはタッチしてください"
+
+#: /View/Elements/visual_captcha.ctp:61
+#: /View/Helper/VisualCaptchaHelper.php:94
+msgid "Refresh/reload icon"
+msgstr "再読み込み"
+
+#: /View/Elements/visual_captcha.ctp:62
+#: /View/Helper/VisualCaptchaHelper.php:95
+msgid "Refresh/reload: get new images and accessibility option!"
+msgstr "再読み込み：新しい画像または音声質問を読み込みなおします"
+

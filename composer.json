@@ -1,0 +1,56 @@
+{
+    "name": "netcommons/visual_captcha",
+    "description": "VisualCaptcha for NetCommons Plugin",
+    "homepage": "http://www.netcommons.org/",
+    "extra": {
+        "installer-paths": {
+            "app/Plugin/{$name}": ["type:cakephp-plugin"]
+        }
+    },
+    "require": {
+        "cakephp/cakephp":              "~2.6",
+        "cakephp/debug_kit":            "~2.2",
+        "cakedc/migrations":            "~2.2",
+        "components/jquery":            "~2.1",
+        "phpunit/phpunit":              "~3.7.38",
+        "sebastian/phpcpd":             "~2.0",
+        "twbs/bootstrap":               "~3.1",
+        "emotionloop/visualcaptcha":    "^0.0.4"
+    },
+    "require-dev": {
+        "mustangostang/spyc":           "dev-master",
+        "netcommons/net-commons":       "dev-master",
+        "satooshi/php-coveralls":       "dev-master"
+    },
+    "license": "NetCommons License",
+    "authors": [
+        {
+            "name": "Toshihide Hashimoto(AllCreator Co., Ltd.)",
+            "email": "info@allcreator.net",
+            "homepage": "http://allcreator.net",
+            "role": "Developer"
+        },
+        {
+            "name": "Minori Kikuchihara(AllCreator Co., Ltd.)",
+            "email": "info@allcreator.net",
+            "homepage": "http://allcreator.net",
+            "role": "Developer"
+        },
+        {
+            "name": "Rika Fujiwara(AllCreator Co., Ltd.)",
+            "email": "info@allcreator.net",
+            "homepage": "http://allcreator.net",
+            "role": "Developer"
+        },
+        {
+            "name":     "NetCommons Community",
+            "homepage": "https://github.com/NetCommons3/VisualCaptcha/graphs/contributors"
+        }
+    ],
+    "type":        "cakephp-plugin",
+    "keywords":    ["cakephp", "visual_captcha"],
+    "config": {
+        "vendor-dir": "vendors"
+    }
+}
+

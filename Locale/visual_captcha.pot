@@ -1,0 +1,53 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: /Controller/Component/VisualCaptchaComponent.php:221
+msgid "Image was NOT valid! Please try again."
+msgstr ""
+
+#: /Controller/Component/VisualCaptchaComponent.php:224
+msgid "Accessibility answer was NOT valid! Please try again."
+msgstr ""
+
+#: /View/Elements/visual_captcha.ctp:57
+#: /View/Helper/VisualCaptchaHelper.php:90
+msgid "Sound icon"
+msgstr ""
+
+#: /View/Elements/visual_captcha.ctp:58
+#: /View/Helper/VisualCaptchaHelper.php:91
+msgid "Accessibility option: listen to a question and answer it!"
+msgstr ""
+
+#: /View/Elements/visual_captcha.ctp:59
+#: /View/Helper/VisualCaptchaHelper.php:92
+msgid "Type below the <strong>answer</strong> to what you hear. Numbers or words:"
+msgstr ""
+
+#: /View/Elements/visual_captcha.ctp:60
+#: /View/Helper/VisualCaptchaHelper.php:93
+msgid "Click or touch the <strong>ANSWER</strong>"
+msgstr ""
+
+#: /View/Elements/visual_captcha.ctp:61
+#: /View/Helper/VisualCaptchaHelper.php:94
+msgid "Refresh/reload icon"
+msgstr ""
+
+#: /View/Elements/visual_captcha.ctp:62
+#: /View/Helper/VisualCaptchaHelper.php:95
+msgid "Refresh/reload: get new images and accessibility option!"
+msgstr ""
+
