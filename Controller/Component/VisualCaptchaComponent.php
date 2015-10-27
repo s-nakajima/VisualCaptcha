@@ -50,7 +50,7 @@ class VisualCaptchaComponent extends Component {
  *
  * @var string
  */
-    public $operationType = VisualCaptchaComponent::OPERATION_REDIRECT;
+    public $operationType = VisualCaptchaComponent::OPERATION_EMBEDDING;
 
 /**
  * call controller w/ associations
