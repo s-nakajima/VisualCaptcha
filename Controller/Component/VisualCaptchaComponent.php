@@ -28,6 +28,14 @@ App::import('Vendor', 'Session', array(
 /**
  * VisualCaptcha Component
  *
+ * 画像認証画面へのリダイレクト、認証処理を行います。<br>
+ * 利用方式、対象アクション、認証要素key名称を指定してください。
+ *
+ * [利用方式](#operationtype)<br>
+ * [対象アクション](#operationtype)
+ *
+ *
+ *
  * @author AllCreator <info@allcreator.net>
  * @package NetCommons\VisualCaptcha\Controller\Component
  */
@@ -43,14 +51,63 @@ class VisualCaptchaComponent extends Component {
     const OPERATION_NONE = 'none';
 
 /**
- * 画像認証プラグイン 処理イメージ
- * デフォルトは埋め込み方式とする
- * このプラグインの振る舞いを変更したい場合は。ControllerでComponentを組み込むときに配列引数を与えて設定するか
- * ControllerのbeforeFilterでこの属性値を変更することで行える
+ * 利用方式
+ *
+ * * OPERATION_REDIRECT<br>
+ * 切り替わり方式<br>
+ * 認証が必要な画面を表示する前に、画像認証画面が自動的に表示される方式です。<br>
+ * 画像認証に成功した後、認証が必要な画面を表示します。<br>
+ * この場合、画像認証画面、認証Postを当プラグインが処理するため、、
+ * 利用プラグインは、VisualCaptchaComponentを設定するのみです。<br>
+ * 対象アクション名も指定してください。
+ *
+ * #### サンプルコード
+ * ```
+ * public $components = array(
+ * 	'VisualCaptcha.VisualCaptcha' => array(
+ * 		'operationType' => VisualCaptchaComponent::OPERATION_REDIRECT,
+ * 		'targetAction' => 'answer',
+ * 		'identifyKey' => 'Questionnaire'？？？
+ * 	)
+ * )
+ * ```
+ *
+ * * OPERATION_EMBEDDING<br>
+ * 埋め込み方式(デフォルト)<br>
+ * 認証が必要な画面に、画像認証パーツを埋め込む方式です。<br>
+ * 切り替わり方式だと画像認証画面だけが表示されることになるが、埋め込み方式は認証が必要な画面の任意の場所に埋め込めます。<br>
+ * この場合は、VisualCaptchaComponentを設定、viewファイルへのvisual_captcha.ctpの埋め込み、
+ * 正しい回答がされたかのチェックを行う必要があります。<br>
+ *
+ *
+ * #### サンプルコード
+ * ##### Controller(明示的に指定)
+ * ```
+ * public $components = array(
+ * 	'VisualCaptcha.VisualCaptcha' => array(
+ * 		'operationType' => VisualCaptchaComponent::OPERATION_EMBEDDING,
+ * 	)
+ * )
+ * ```
+ * ##### Controller(デフォルト設定を利用)
+ * ```
+ * public $components = array(
+ * 	'VisualCaptcha.VisualCaptcha'
+ * )
+ * ```
+ * ##### View
+ * ```
+ * <?php
+ * 	echo $this->element(
+ * 		'VisualCaptcha.visual_captcha', array(
+ * 			'identifyKey' => 'VisualCaptcha'
+ * 		)
+ * ); ?>
+ * ```
  *
  * @var string
  */
-    public $operationType = VisualCaptchaComponent::OPERATION_REDIRECT;
+    public $operationType = VisualCaptchaComponent::OPERATION_EMBEDDING;
 
 /**
  * call controller w/ associations
