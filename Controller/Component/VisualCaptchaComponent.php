@@ -81,18 +81,13 @@ class VisualCaptchaComponent extends Component {
  *
  *
  * #### サンプルコード
- * ##### Controller(明示的に指定)
+ * ##### Controller
  * ```
  * public $components = array(
  * 	'VisualCaptcha.VisualCaptcha' => array(
  * 		'operationType' => VisualCaptchaComponent::OPERATION_EMBEDDING,
+ * 		'identifyKey' => 'VisualCaptcha'
  * 	)
- * )
- * ```
- * ##### Controller(デフォルト設定を利用)
- * ```
- * public $components = array(
- * 	'VisualCaptcha.VisualCaptcha'
  * )
  * ```
  * ##### View
