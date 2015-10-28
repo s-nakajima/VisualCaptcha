@@ -21,6 +21,9 @@
             'inline' => false
     ));
     $frameId = Current::read('Frame.id');
+    if (! isset($identifyKey)) {
+        $identifyKey = 'VisualCaptcha';
+    }
     $elementId = $identifyKey . '-' . $frameId;
 
     $basePath = 'visual_captcha/visual_captcha/';
