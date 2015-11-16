@@ -167,7 +167,6 @@ class VisualCaptchaComponent extends Component {
  */
 	public $returnUrl = array();
 
-
 /**
  * Called before the Controller::beforeFilter().
  *
@@ -236,7 +235,6 @@ class VisualCaptchaComponent extends Component {
 			$controller->Session->write('VisualCaptcha.returnUrl', $returnUrl . '?' . http_build_query($this->controller->request->query));
 			$controller->redirect(NetCommonsUrl::actionUrl($this->visualCaptchaAction));
 		}
-		return;
 	}
 /**
  * getReturnUrl get return screen url

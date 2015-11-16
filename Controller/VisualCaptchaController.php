@@ -18,6 +18,7 @@ App::uses('AppController', 'Controller');
  * @package NetCommons\VisualCaptcha\Controller
  */
 class VisualCaptchaController extends VisualCaptchaAppController {
+
 /**
  * use components
  *
