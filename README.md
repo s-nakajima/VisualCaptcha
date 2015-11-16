@@ -11,5 +11,9 @@
 | ------------ | ------ |
 | composer.json | [![Dependency Status](https://www.versioneye.com/user/projects/5629b1180c4406000a0008cb/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5629b1180c4406000a0008cb) |
 
-### [VisualCaptchaComponent](https://github.com/NetCommons3/NetCommons3Docs/blob/master/phpdocMd/VisualCaptcha/VisualCaptchaComponent.md#visualcaptchacomponent)
+### 概要
+ロボットでのアクセスを防ぐための、画像認証機能を提供します。<br>
+利用するコントローラーでVisualCaptchaComponentを定義してください。
+
+#### [VisualCaptchaComponent](https://github.com/NetCommons3/NetCommons3Docs/blob/master/phpdocMd/VisualCaptcha/VisualCaptchaComponent.md#visualcaptchacomponent)
 
