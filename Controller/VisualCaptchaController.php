@@ -23,31 +23,31 @@ class VisualCaptchaController extends VisualCaptchaAppController {
  *
  * @var array
  */
-    public $components = array(
-        'Pages.PageLayout',
-        'VisualCaptcha.VisualCaptcha' => array(
-            'operationType' => 'none',
-        ),
-    );
+	public $components = array(
+		'Pages.PageLayout',
+		'VisualCaptcha.VisualCaptcha' => array(
+			'operationType' => 'none',
+		),
+	);
 
 /**
  * use helpers
  *
  */
-    public $helpers = [
-        'NetCommons.BackToPage',
-        'NetCommons.Token'
-    ];
+	public $helpers = [
+		'NetCommons.BackToPage',
+		'NetCommons.Token'
+	];
 
 /**
  * beforeFilter
  *
  * @return void
  */
-    public function beforeFilter() {
-        parent::beforeFilter();
-        $this->Auth->allow('captcha', 'captcha_image', 'captcha_audio');
-    }
+	public function beforeFilter() {
+		parent::beforeFilter();
+		$this->Auth->allow('captcha', 'captcha_image', 'captcha_audio');
+	}
 
 /**
  * view method
@@ -55,26 +55,26 @@ class VisualCaptchaController extends VisualCaptchaAppController {
  *
  * @return void
  */
-    public function view() {
-        if ($this->request->isPost()) {
-            if ($this->VisualCaptcha->check()) {
-                // リダイレクト先はセッションクリアか
-                $this->redirect($this->VisualCaptcha->getReturnUrl());
-            }
-        }
-        $this->request->data['Frame'] = Current::read('Frame');
-        $this->request->data['Block'] = Current::read('Block');
-    }
+	public function view() {
+		if ($this->request->isPost()) {
+			if ($this->VisualCaptcha->check()) {
+				// リダイレクト先はセッションクリアか
+				$this->redirect($this->VisualCaptcha->getReturnUrl());
+			}
+		}
+		$this->request->data['Frame'] = Current::read('Frame');
+		$this->request->data['Block'] = Current::read('Block');
+	}
 /**
  * captcha
  * return to Client captcha data
  *
  * @return string
  */
-    public function captcha() {
-        $this->autoRender = false;
-        echo $this->VisualCaptcha->generate();	// もしも表示数を変えたいときは引数に数値を設定
-    }
+	public function captcha() {
+		$this->autoRender = false;
+		echo $this->VisualCaptcha->generate();	// もしも表示数を変えたいときは引数に数値を設定
+	}
 
 /**
  * captcha_image
@@ -83,10 +83,10 @@ class VisualCaptchaController extends VisualCaptchaAppController {
  * @param int $index captcha image number
  * @return string
  */
-    public function captcha_image($index) {
-        $this->autoRender = false;
-        return $this->VisualCaptcha->image($index);
-    }
+	public function captcha_image($index) {
+		$this->autoRender = false;
+		return $this->VisualCaptcha->image($index);
+	}
 
 /**
  * captcha_audio
@@ -94,8 +94,8 @@ class VisualCaptchaController extends VisualCaptchaAppController {
  *
  * @return string
  */
-    public function captcha_audio() {
-        $this->autoRender = false;
-        echo $this->VisualCaptcha->audio();
-    }
+	public function captcha_audio() {
+		$this->autoRender = false;
+		echo $this->VisualCaptcha->audio();
+	}
 }
