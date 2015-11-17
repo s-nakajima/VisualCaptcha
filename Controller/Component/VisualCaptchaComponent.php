@@ -159,15 +159,6 @@ class VisualCaptchaComponent extends Component {
 	);
 
 /**
- * 認証後戻るURL
- * 切り替え型の時しか使わない
- * 切り替え型で、画像認証成功時戻る先のURL
- *
- * @var array
- */
-	public $returnUrl = array();
-
-/**
  * Called before the Controller::beforeFilter().
  *
  * @param Controller $controller Controller with components to initialize
@@ -215,13 +206,6 @@ class VisualCaptchaComponent extends Component {
 		}
 
 		// 切り替え型のとき
-
-		// 戻り先URL準備
-		$this->returnUrl = array(
-			'plugin' => Inflector::underscore(Current::read('Plugin.key')),
-			'controller' => Inflector::underscore($this->controller->name),
-			'action' => Inflector::underscore($this->controller->action)
-		) + $this->controller->request->query;
 
 		// リダイレクトURL準備
 		$this->visualCaptchaAction['frame_id'] = Current::read('Frame.id');
