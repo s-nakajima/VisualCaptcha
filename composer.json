@@ -1,5 +1,5 @@
 {
-    "name": "netcommons/visual_captcha",
+    "name": "netcommons/visual-captcha",
     "description": "VisualCaptcha for NetCommons Plugin",
     "homepage": "http://www.netcommons.org/",
     "extra": {
@@ -48,7 +48,7 @@
         }
     ],
     "type":        "cakephp-plugin",
-    "keywords":    ["cakephp", "visual_captcha"],
+    "keywords":    ["cakephp", "visual-captcha"],
     "config": {
         "vendor-dir": "vendors"
     }
