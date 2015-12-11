@@ -112,13 +112,6 @@ class VisualCaptchaComponent extends Component {
 	public $controller = null;
 
 /**
- * visual captcha redirect target controller
- *
- * @var string
- */
-	public $targetController = null;
-
-/**
  * visual captcha redirect target controller action
  *
  * @var string
@@ -206,13 +199,11 @@ class VisualCaptchaComponent extends Component {
 		}
 
 		// 切り替え型のとき
-
 		// リダイレクトURL準備
 		$this->visualCaptchaAction['frame_id'] = Current::read('Frame.id');
 		// リファラが自分自身でないことが必須（無限ループになる
 		if ($this->operationType == VisualCaptchaComponent::OPERATION_REDIRECT
 			&& $controller->referer('', true) != NetCommonsUrl::actionUrl($this->visualCaptchaAction)
-			&& $controller->name == $this->targetController
 			&& $controller->action == $this->targetAction) {
 			// 切り替え後、認証成功時のURLを取り出す
 			$returnUrl = $controller->here;
