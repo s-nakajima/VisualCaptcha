@@ -48,7 +48,7 @@
         }
     ],
     "type":        "cakephp-plugin",
-    "keywords":    ["cakephp", "visual-captcha"],
+    "keywords":    ["cakephp", "visual_captcha"],
     "config": {
         "vendor-dir": "vendors"
     }
