@@ -1,5 +1,6 @@
 {
     "name": "s-nakajima/visual-captcha",
+    "preferred-install": "stable",
     "type":        "cakephp-plugin",
     "keywords":    ["cakephp", "netcommons", "s-nakajima", "visual-captcha"],
     "homepage":    "http://www.netcommons.org/",
