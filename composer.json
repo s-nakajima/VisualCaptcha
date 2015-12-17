@@ -1,7 +1,7 @@
 {
     "name": "s-nakajima/visual-captcha",
     "type":        "cakephp-plugin",
-    "keywords":    ["cakephp", "netcommons", "visual-captcha"],
+    "keywords":    ["cakephp", "netcommons", "s-nakajima", "visual-captcha"],
     "homepage":    "http://www.netcommons.org/",
     "license":     "NetCommons License",
     "authors": [
