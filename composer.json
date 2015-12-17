@@ -11,7 +11,6 @@
         "cakephp/cakephp":              "~2.6",
         "cakephp/debug_kit":            "~2.2",
         "cakedc/migrations":            "~2.2",
-        "components/jquery":            "~2.1",
         "phpunit/phpunit":              "~3.7.38",
         "sebastian/phpcpd":             "~2.0",
         "twbs/bootstrap":               "~3.1",
