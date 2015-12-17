@@ -1,6 +1,5 @@
 {
     "name": "s-nakajima/visual-captcha",
-    "minimum-stability": "dev",
     "type":        "cakephp-plugin",
     "keywords":    ["cakephp", "netcommons", "s-nakajima", "visual-captcha"],
     "homepage":    "http://www.netcommons.org/",
@@ -20,14 +19,12 @@
         "cakedc/migrations":            "~2.2",
         "cakephp/cakephp":              "~2.6",
         "cakephp/debug_kit":            "~2.2",
-        "components/jquery":            "~2.1",
         "twbs/bootstrap":               "~3.1"
     },
     "require-dev": {
-        "mustangostang/spyc":           "@dev",
-        "netcommons/data-types":        "dev-master",
+        "mustangostang/spyc":           "dev-master",
         "netcommons/net-commons":       "dev-master",
-        "satooshi/php-coveralls":       "@dev"
+        "satooshi/php-coveralls":       "dev-master"
     },
     "config": {
         "vendor-dir": "vendors"
