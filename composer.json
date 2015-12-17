@@ -1,53 +1,34 @@
 {
     "name": "s-nakajima/visual-captcha",
-    "description": "VisualCaptcha for NetCommons Plugin",
-    "homepage": "http://www.netcommons.org/",
+    "type":        "cakephp-plugin",
+    "keywords":    ["cakephp", "visual-captcha"],
+    "homepage":    "http://www.netcommons.org/",
+    "license":     "NetCommons License",
+    "authors": [
+        {
+            "name":     "NetCommons Community",
+            "homepage": "https://github.com/NetCommons3/Users/graphs/contributors"
+        }
+    ],
     "extra": {
         "installer-paths": {
             "app/Plugin/{$name}": ["type:cakephp-plugin"]
         }
     },
     "require": {
+        "cakedc/migrations":            "~2.2",
         "cakephp/cakephp":              "~2.6",
         "cakephp/debug_kit":            "~2.2",
-        "cakedc/migrations":            "~2.2",
-        "sebastian/phpcpd":             "~2.0",
+        "components/jquery":            "~2.1",
         "twbs/bootstrap":               "~3.1"
     },
     "require-dev": {
-        "mustangostang/spyc":           "dev-master",
+        "mustangostang/spyc":           "@dev",
+        "netcommons/data-types":        "dev-master",
         "netcommons/net-commons":       "dev-master",
-        "satooshi/php-coveralls":       "dev-master"
+        "satooshi/php-coveralls":       "@dev"
     },
-    "license": "NetCommons License",
-    "authors": [
-        {
-            "name": "Toshihide Hashimoto(AllCreator Co., Ltd.)",
-            "email": "info@allcreator.net",
-            "homepage": "http://allcreator.net",
-            "role": "Developer"
-        },
-        {
-            "name": "Minori Kikuchihara(AllCreator Co., Ltd.)",
-            "email": "info@allcreator.net",
-            "homepage": "http://allcreator.net",
-            "role": "Developer"
-        },
-        {
-            "name": "Rika Fujiwara(AllCreator Co., Ltd.)",
-            "email": "info@allcreator.net",
-            "homepage": "http://allcreator.net",
-            "role": "Developer"
-        },
-        {
-            "name":     "NetCommons Community",
-            "homepage": "https://github.com/NetCommons3/VisualCaptcha/graphs/contributors"
-        }
-    ],
-    "type":        "cakephp-plugin",
-    "keywords":    ["cakephp", "visual_captcha"],
     "config": {
         "vendor-dir": "vendors"
     }
 }
-
