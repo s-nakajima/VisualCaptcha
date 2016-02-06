@@ -56,10 +56,11 @@ class VisualCaptchaController extends VisualCaptchaAppController {
  * @return void
  */
 	public function view() {
-		if ($this->request->isPost()) {
+		if ($this->request->is('post')) {
 			if ($this->VisualCaptcha->check()) {
 				// リダイレクト先はセッションクリアか
 				$this->redirect($this->VisualCaptcha->getReturnUrl());
+				return;
 			}
 		}
 		$this->request->data['Frame'] = Current::read('Frame');

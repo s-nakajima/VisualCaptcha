@@ -167,7 +167,6 @@ class VisualCaptchaComponent extends Component {
 		// 記録されている正解データを保持
 		$this->imageField = $this->controller->Session->read('visualcaptcha.frontendData.imageFieldName');
 		$this->audioField = $this->controller->Session->read('visualcaptcha.frontendData.audioFieldName');
-
 		// セキュリティコンポーネントを使用されている場合は
 		// 画像認証フィールドをUnlockにしておく
 		if (array_key_exists('Security', $this->controller->components)) {
@@ -179,6 +178,7 @@ class VisualCaptchaComponent extends Component {
 			}
 		}
 	}
+
 /**
  * Called after the Controller::beforeFilter() and before the controller action
  *
@@ -201,14 +201,22 @@ class VisualCaptchaComponent extends Component {
 		// 切り替え型のとき
 		// リダイレクトURL準備
 		$this->visualCaptchaAction['frame_id'] = Current::read('Frame.id');
+		$this->visualCaptchaAction['block_id'] = Current::read('Block.id');
 		// リファラが自分自身でないことが必須（無限ループになる
-		if ($this->operationType == VisualCaptchaComponent::OPERATION_REDIRECT
-			&& $controller->referer('', true) != NetCommonsUrl::actionUrl($this->visualCaptchaAction)
-			&& $controller->action == $this->targetAction) {
-			// 切り替え後、認証成功時のURLを取り出す
-			$returnUrl = $controller->here;
-			$controller->Session->write('VisualCaptcha.returnUrl', $returnUrl . '?' . http_build_query($this->controller->request->query));
-			$controller->redirect(NetCommonsUrl::actionUrl($this->visualCaptchaAction));
+		if ($this->operationType == VisualCaptchaComponent::OPERATION_REDIRECT) {
+			if ($controller->action == $this->targetAction) {
+				// OK判定が出ているか出てないならばリダイレクト
+				if (! $controller->Session->check('VisualCaptcha.judgement')) {
+					// 切り替え後、認証成功時のURLを取り出す
+					$returnUrl = $controller->here;
+					$controller->Session->write('VisualCaptcha.returnUrl', $returnUrl . '?' . http_build_query($this->controller->request->query));
+					$controller->redirect(NetCommonsUrl::actionUrl($this->visualCaptchaAction));
+				} else {
+					// 出ているときはリダイレクトない
+					// そのままガード外して目的の画面へ行かせるので、ここでOK判定を消しておく
+					$controller->Session->delete('VisualCaptcha.judgement');
+				}
+			}
 		}
 	}
 /**
@@ -241,8 +249,12 @@ class VisualCaptchaComponent extends Component {
 		if ($ret === false) {
 			//$this->controller->NetCommons->setFlashNotification($errorMessage);
 			$this->controller->set('visualCaptchaErrorMessage', $errorMessage);
+		} else {
+			// 判定セッション情報はリダイレクトの処理専用
+			if ($this->controller->name == 'VisualCaptcha') {
+				$this->controller->Session->write('VisualCaptcha.judgement', 'OK');
+			}
 		}
-
 		return $ret;
 	}
 /**
@@ -257,9 +269,17 @@ class VisualCaptchaComponent extends Component {
 		$imageJsonPath = $this->assetPath . DS . $lang . DS . 'images.json';
 		$audioJsonPath = $this->assetPath . DS . $lang . DS . 'audios.json';
 
+		$imageJson = $this->__utilReadJSON($imageJsonPath);
+		$audioJson = $this->__utilReadJSON($audioJsonPath);
+
+		if (! $imageJson || ! $audioJson) {
+			return '';
+		}
+
 		$captcha = new Captcha($session, $this->assetPath, $this->__utilReadJSON($imageJsonPath), $this->__utilReadJSON($audioJsonPath));
 		$captcha->generate($count);
-		return json_encode($captcha->getFrontEndData());
+		$ret = $captcha->getFrontEndData();
+		return json_encode($ret);
 	}
 
 /**

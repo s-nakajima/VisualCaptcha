@@ -1,0 +1,1 @@
+<?php echo 'none_test_ctp';
