@@ -119,8 +119,11 @@ class VisualCaptchaControllerViewTest extends NetCommonsControllerTestCase {
 			'block_id' => 2,
 			'frame_id' => 6
 		);
+		ob_start();
 		$this->_testNcAction($url, array('method' => 'get'), null, 'view');
+		$actual = ob_get_clean();
 		// FUJI Streaming応答のときのアサーション方法がわからない
+		$this->assertNotEmpty($actual);
 	}
 
 /**
@@ -136,8 +139,11 @@ class VisualCaptchaControllerViewTest extends NetCommonsControllerTestCase {
 			'block_id' => 2,
 			'frame_id' => 6
 		);
+		ob_start();
 		$this->_testNcAction($url, array('method' => 'get'), null, 'view');
+		$actual = ob_get_clean();
 		//$result = $this->_testNcAction($url, array('method' => 'get'), null, 'view');
 		// FUJI 画像ファイルのダウンロード応答のときのアサーション方法がわからない
+		$this->assertNotEmpty($actual);
 	}
 }
