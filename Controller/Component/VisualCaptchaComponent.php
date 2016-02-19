@@ -238,7 +238,7 @@ class VisualCaptchaComponent extends Component {
 		$captcha = new Captcha($session, $this->assetPath);
 
 		$ret = false;
-		$errorMessage = '';
+		$errorMessage = __d('visual_captcha', 'No answer! Please try again.');
 		if (isset($reqData[$this->imageField])) {
 			$ret = $captcha->validateImage($reqData[$this->imageField]);
 			$errorMessage = __d('visual_captcha', 'Image was NOT valid! Please try again.');

@@ -80,5 +80,27 @@ class VisualCaptchaControllerPostTest extends NetCommonsControllerTestCase {
 
 		$this->assertTextContains('netcommons', $result);
 	}
+/**
+ * アクションのGETテスト
+ * POPUPタイプのPOST - NG パターン
+ *
+ * @return void
+ */
+	public function testPostNG() {
+		$data = array(
+			'Frame' => array('id' => 6),
+			'Block' => array('id' => 2),
+			'testImage' => 'testImage'
+		);
+
+		$result = $this->_testPostAction('post', $data,
+			array(
+				'plugin' => 'visual_captcha',
+				'controller' => 'visual_captcha',
+				'action' => 'view', 'block_id' => 2, 'frame_id' => 6));
+		$this->assertTextContains(
+			__d('visual_captcha', 'No answer! Please try again.'),
+			$result);
+	}
 
 }

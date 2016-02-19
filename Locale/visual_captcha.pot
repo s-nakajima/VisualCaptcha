@@ -13,6 +13,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+msgid "No answer! Please try again."
+msgstr ""
+
 #: /Controller/Component/VisualCaptchaComponent.php:221
 msgid "Image was NOT valid! Please try again."
 msgstr ""
