@@ -10,7 +10,7 @@
   ],
   "license": "NetCommons License",
   "dependencies": {
-    "visualcaptcha.jquery": "~0.0.5"
+    "visualcaptcha.jquery": ">=0.0.5"
   }
 }
 
