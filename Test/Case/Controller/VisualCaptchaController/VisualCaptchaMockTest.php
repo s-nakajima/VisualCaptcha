@@ -71,7 +71,7 @@ class VisualCaptchaMockTest extends NetCommonsControllerTestCase {
 			'plugin' => 'visual_captcha',
 			'controller' => 'visual_captcha',
 			'action' => 'view',
-		), true);
+		), false);
 		// 認証キー画面にリダイレクトされたことを確認
 		$this->assertTextContains($expected, $result);
 	}
