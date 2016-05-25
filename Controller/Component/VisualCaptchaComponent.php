@@ -209,7 +209,10 @@ class VisualCaptchaComponent extends Component {
 				if (! $controller->Session->check('VisualCaptcha.judgement')) {
 					// 切り替え後、認証成功時のURLを取り出す
 					$returnUrl = $controller->here;
-					$controller->Session->write('VisualCaptcha.returnUrl', $returnUrl . '?' . http_build_query($this->controller->request->query));
+					$controller->Session->write(
+						'VisualCaptcha.returnUrl',
+						$returnUrl . '?' . http_build_query($this->controller->request->query)
+					);
 					$controller->redirect(NetCommonsUrl::actionUrl($this->visualCaptchaAction));
 				} else {
 					// 出ているときはリダイレクトない
@@ -276,7 +279,12 @@ class VisualCaptchaComponent extends Component {
 			return '';
 		}
 
-		$captcha = new Captcha($session, $this->assetPath, $this->__utilReadJSON($imageJsonPath), $this->__utilReadJSON($audioJsonPath));
+		$captcha = new Captcha(
+			$session,
+			$this->assetPath,
+			$this->__utilReadJSON($imageJsonPath),
+			$this->__utilReadJSON($audioJsonPath)
+		);
 		$captcha->generate($count);
 		$ret = $captcha->getFrontEndData();
 		return json_encode($ret);

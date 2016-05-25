@@ -73,7 +73,9 @@ class VisualCaptchaController extends VisualCaptchaAppController {
  */
 	public function captcha() {
 		$this->autoRender = false;
-		echo $this->VisualCaptcha->generate();	// もしも表示数を変えたいときは引数に数値を設定
+
+		// もしも表示数を変えたいときは引数に数値を設定
+		echo $this->VisualCaptcha->generate();
 	}
 
 /**
