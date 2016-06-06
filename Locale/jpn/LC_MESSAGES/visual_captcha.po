@@ -42,7 +42,7 @@ msgstr "音声を聞いて<strong>答え</strong>を以下に入力してくだ�
 #: /View/Elements/visual_captcha.ctp:60
 #: /View/Helper/VisualCaptchaHelper.php:93
 msgid "Click or touch the <strong>ANSWER</strong>"
-msgstr "<strong>ANSWER</strong>をクリック、またはタッチしてください"
+msgstr "<strong>ANSWER</strong>を押してください"
 
 #: /View/Elements/visual_captcha.ctp:61
 #: /View/Helper/VisualCaptchaHelper.php:94
