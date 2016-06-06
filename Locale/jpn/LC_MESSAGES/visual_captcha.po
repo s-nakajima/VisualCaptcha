@@ -32,7 +32,7 @@ msgstr "音声"
 #: /View/Elements/visual_captcha.ctp:58
 #: /View/Helper/VisualCaptchaHelper.php:91
 msgid "Accessibility option: listen to a question and answer it!"
-msgstr "アクセシビリティ対応：質問を聞いて答えることができます"
+msgstr "アクセシビリティ対応：質問を聞いて答えることができます。"
 
 #: /View/Elements/visual_captcha.ctp:59
 #: /View/Helper/VisualCaptchaHelper.php:92
@@ -42,7 +42,7 @@ msgstr "音声を聞いて<strong>答え</strong>を以下に入力してくだ�
 #: /View/Elements/visual_captcha.ctp:60
 #: /View/Helper/VisualCaptchaHelper.php:93
 msgid "Click or touch the <strong>ANSWER</strong>"
-msgstr "<strong>ANSWER</strong>を押してください"
+msgstr "<strong>ANSWER</strong>を押してください。"
 
 #: /View/Elements/visual_captcha.ctp:61
 #: /View/Helper/VisualCaptchaHelper.php:94
@@ -52,5 +52,5 @@ msgstr "再読み込み"
 #: /View/Elements/visual_captcha.ctp:62
 #: /View/Helper/VisualCaptchaHelper.php:95
 msgid "Refresh/reload: get new images and accessibility option!"
-msgstr "再読み込み：新しい画像または音声質問を読み込みなおします"
+msgstr "再読み込み：新しい画像または音声質問を読み込みなおします。"
 
